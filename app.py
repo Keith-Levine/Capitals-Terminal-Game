@@ -209,7 +209,18 @@ guesses = 0
 
 print('Learn all the US Capitals!!')
 start_question = input('Ready to begin? [y/n] ').lower()
+
 while guesses < 51:
+
+    if guesses == 50:
+        end_message = input(f'GAME OVER, you have gone through all the states. Your final score was {correct} correct, and {wrong} incorrect. Would you like to play again? [y/n]' ).lower()
+
+        if end_message == 'y':
+            correct = 0
+            incorrect = 0
+            tries = 0
+        else:
+            print('See ya later!')
 
     if start_question == 'y':
         random.shuffle(state_capitals)
