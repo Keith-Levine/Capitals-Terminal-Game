@@ -209,26 +209,27 @@ guesses = 0
 
 print('Learn all the US Capitals!!')
 start_question = input('Ready to begin? [y/n] ').lower()
+while guesses < 51:
 
-if start_question == 'y':
-    random.shuffle(state_capitals)
-    for state in state_capitals:
-        question = input(f'What is the state capital of {state["name"]}? ').title()
-        if question == state["capital"]:
-            print(f'Correct! You guessed {question}')
-            guesses += 1
-            correct += 1
-            print(f'You have correctly guessed {correct} state/s')
-            print(f'You have inccorrectly guessed {wrong} state/s')
-            print(f'{guesses} total guesses')
+    if start_question == 'y':
+        random.shuffle(state_capitals)
+        for state in state_capitals:
+            question = input(f'What is the state capital of {state["name"]}? ').title()
+            if question == state["capital"]:
+                print(f'Correct! You guessed {question}')
+                guesses += 1
+                correct += 1
+                print(f'You have correctly guessed {correct} state/s')
+                print(f'You have incorrectly guessed {wrong} state/s')
+                print(f'{guesses} total guesses')
 
-        else: 
-            print(f'Sadly, {question} is incorrect. Try again!')
-            wrong += 1
-            guesses += 1
-            print(f'You have correctly guessed {correct} state/s')
-            print(f'You have inccorrectly guessed {wrong} state/s')
-            print(f'{guesses} total guesses')
+            else: 
+                print(f'Sadly, {question} is incorrect. Try again!')
+                wrong += 1
+                guesses += 1
+                print(f'You have correctly guessed {correct} state/s')
+                print(f'You have incorrectly guessed {wrong} state/s')
+                print(f'{guesses} total guesses')
 
-else:
-    print('You are missing out') 
+    else:
+        print('You are missing out') 
