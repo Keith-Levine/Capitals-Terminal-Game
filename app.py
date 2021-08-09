@@ -202,3 +202,23 @@ state_capitals = [
     "capital": "Cheyenne"
   }
 ]
+
+correct = 0
+wrong = 0
+guesses = 0
+
+print('Learn all the US Capitals!!')
+welcome_question = input('Ready to begin? [y/n] ').lower()
+
+if welcome_question == 'y':
+    random.shuffle(state_capitals)
+    for state in state_capitals:
+        question = input(f'What is the state capital of {state["name"]}? ').title()
+        if question == state["capital"]:
+            print(f'Correct! You guessed {question}')
+
+        else: 
+            print(f'Sadly, {question} is incorrect. Try again!')
+
+else:
+    print('You are missing out') 
